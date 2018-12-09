@@ -14,8 +14,8 @@ public class Main {
 	    System.out.println("Арифметические операции над числами: "
                                                     + x + " и " + y);
         sum = x + y;
-	    System.out.println("Сумма = " + sum);
-	    diff = x - y;
+	System.out.println("Сумма = " + sum);
+	diff = x - y;
         System.out.println("Разность = " + diff);
         multi = x * y;
         System.out.println("Произведение = " + multi);

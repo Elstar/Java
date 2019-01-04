@@ -29,7 +29,7 @@ public class ConvertMoneyToString {
         centsString = Double.toString(number);
         pointPosition = centsString.indexOf(".");
         if (pointPosition>0) {
-            cents = centsString.substring(pointPosition + 1, pointPosition + 3);
+            cents = centsString.substring(pointPosition + 1, centsString.length());
             cent = Integer.parseInt(cents);
         }
 

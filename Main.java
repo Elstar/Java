@@ -1,37 +1,20 @@
-package sergiy.dmb;
-
 public class Main {
 
     public static void main(String[] args) {
-	    int x, y;
-	    double div, sum, diff, multi, xd, yd;
-	    x = 10;
-	    y = 20;
-	    xd = 7.3;
-	    yd = 8.5;
+        Cat firstCat = new Cat(
+                "black", 3.5, 2.2, "siamese");
+        Cat secondCat = new Cat(
+                "white", 5, 4.2, "none");
+        System.out.println(firstCat);
+        System.out.println(secondCat);
 
-        //Операции на целочислеными числами
-	    System.out.println("Арифметические операции над числами: "
-                                                    + x + " и " + y);
-        sum = x + y;
-	System.out.println("Сумма = " + sum);
-	diff = x - y;
-        System.out.println("Разность = " + diff);
-        multi = x * y;
-        System.out.println("Произведение = " + multi);
-        div = x / y;
-        System.out.println("Частное = " + div);
+        Triangle firstTriangle = new Triangle(3, 4.2, 7);
+        Triangle secondTriangle = new Triangle(1, 4.2, 5.5);
 
-        //Операции над дробными числами
-        System.out.println("Арифметические операции над числами: "
-                + xd + " и " + yd);
-        sum = xd + yd;
-        System.out.println("Сумма = " + sum);
-        diff = xd - yd;
-        System.out.println("Разность = " + diff);
-        multi = xd * yd;
-        System.out.println("Произведение = " + multi);
-        div = xd / yd;
-        System.out.println("Частное = " + div);
+        System.out.println("Площадь первого треугольника: " + firstTriangle.getArea());
+        System.out.println("Площадь второго треугольника: " + secondTriangle.getArea());
+
+        Phone callToMyFriend = new Phone("+380978530430");
+        callToMyFriend.call("+380967128812");
     }
 }

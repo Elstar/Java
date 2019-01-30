@@ -1,45 +1,53 @@
-package sergiy.dmb;
+import java.util.Arrays;
 
-import java.util.Scanner;
+public class Rectangle extends Shape {
+        private Point[] points = new Point[4];
+        private double a;
+        private double b;
 
-public class Rectangle {
-    public static void main(String[] args) {
-
-        int height, width;
-
-        height = innerData("высоту");
-        width = innerData("ширину");
-
-        for(int i=1; i<=height; i++) {
-            for (int j=1; j<=width; j++) {
-                if (i==1 || i==height) {
-                    System.out.print("*");
-                } else {
-                    if (j == 1 || j == width) {
-                        System.out.print("*");
-                    } else {
-                        System.out.print(" ");
-                    }
-                }
-            }
-            System.out.println();
-        }
-    }
-
-    static int innerData(String paramName) {
-        int param = 0;
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Введите " + paramName +" прямоугольника: ");
-
-        while (param<1) {
-            param = scanner.nextInt();
-            if (param<1) {
-                System.out.println("Введенный параметр прямоугольника должен быть больше 0" +
-                        "\nВведите " + paramName + " повторно");
-            }
+        public Rectangle(Point[] points) {
+                this.points = points;
+                setSides();
         }
 
-        return param;
-    }
+        public Rectangle() {
+                super();
+        }
+
+        private void setSides() {
+                a = points[1].getX() - points[0].getX();
+                b = points[2].getY() - points[1].getY();
+        }
+
+        @Override
+        public boolean isShapeValid() {
+                boolean valid = false;
+                if (points[0].getX() == points[1].getX()
+                        && points[2].getX() == points[3].getX()
+                        && points[0].getY() == points[3].getY()
+                        && points[1].getY() == points[2].getY())
+                        valid = true;
+                return valid;
+        }
+
+        @Override
+        public double getPerimetr() {
+                return (a + b) * 2;
+        }
+
+        @Override
+        public double getArea() {
+                double area = a * b;
+
+                return area;
+        }
+
+        @Override
+        public String toString() {
+                return "Rectangle{" +
+                        "points=" + Arrays.toString(points) +
+                        ", a=" + a +
+                        ", b=" + b +
+                        '}';
+        }
 }

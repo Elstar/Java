@@ -3,6 +3,9 @@ import java.util.Arrays;
 public class Board {
         private Shape[] board = new Shape[4];
 
+        public Board() {
+        }
+        
         public void addShape(int index, Shape shape) {
                 board[index] = shape;
         }

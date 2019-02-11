@@ -138,9 +138,9 @@ public class Student extends Human implements Comparable {
                 if (o == null || this == null)
                         return -1;
                 Student anotherStudent = (Student) o;
-                if (!getFam().equals(anotherStudent.getFam()))
-                        return getFam().compareTo(anotherStudent.getFam());
-                return 0;
+                if (anotherStudent.getFam() == null || this.getFam() == null)
+                        return -1;
+                return getFam().compareTo(anotherStudent.getFam());
         }
 
         @Override

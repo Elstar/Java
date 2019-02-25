@@ -2,25 +2,6 @@ import java.util.*;
 
 public class Main {
         public static void main(String[] args) {
-                /*List<Integer> myList = new ArrayList<>();
-
-                myList.add(5);
-                myList.add(9);
-                System.out.println(myList);
-
-                myList.add(1, 7);
-                System.out.println(myList);
-
-                Integer number = myList.get(2);
-
-                Iterator<Integer> itr = myList.iterator();
-                for (;itr.hasNext();) {
-                        Integer element = itr.next();
-                        System.out.println(element);
-                }
-
-                Collections.sort(myList);
-                System.out.println(myList);*/
                 fillList(10);
         }
 
